@@ -1,6 +1,6 @@
 [Project]
-FileName=Micael.dev
-Name=Micael
+FileName=Micael_Serpa.dev
+Name=Micael_Serpa
 Type=1
 Ver=2
 ObjFiles=
@@ -28,7 +28,7 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0000000000000000001000000
+CompilerSettings=0000000000000000000000000
 UnitCount=3
 
 [VersionInfo]
@@ -50,8 +50,18 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
+[Unit1]
+FileName=main.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
 [Unit2]
-FileName=func.c
+FileName=Micael_Serpa.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -61,17 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=func.h
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit1]
-FileName=main.c
+FileName=Micael_Serpa.c
 CompileCpp=0
 Folder=
 Compile=1
