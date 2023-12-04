@@ -25,7 +25,7 @@ FILE *arquivo;
 
     fclose(arquivo);
 
-    printf("Conteúdo do arquivo apagado com sucesso.\n");
+    printf("Conteudo do arquivo apagado com sucesso.\n");
 
     return 0;
 
@@ -49,7 +49,7 @@ FILE *arquivo;
     }
 
     fclose(arquivo);
-		
+		return 0;
 }
 
 
@@ -58,17 +58,16 @@ int* alocarVetor(int tamanho) {
     
     if (vetor == NULL) {
         printf("Erro ao alocar memória.");
-        exit(1); // Encerra o programa em caso de erro na alocação de memória
+        exit(1); 
     }
-    return vetor; // Retorna o ponteiro para o vetor alocado dinamicamente
+    return vetor; 
 }
-
-
 
 void configs(void){
 	
 	setlocale(LC_ALL,"Portuguese");
    // system("color 1F");	
+   
 }
 
 void registroEnergia(float * potencia, float * horas, char strings[100][100], int tam){
@@ -92,7 +91,6 @@ void registroDispositivos(char dispositivos[100][100], int num_Strings) {
 
     if (aux < num_Strings) {
     	        
-	//	printf("%s Digite o nome do dispositivo %d: ", dispositivos[aux], aux + 1);
         printf("Digite o nome do dispositivo %d: ",aux + 1);
         scanf("%s", dispositivos[aux]);
         system("cls"); 
@@ -108,65 +106,64 @@ void registroDispositivos(char dispositivos[100][100], int num_Strings) {
 
 void registro(void){
 	
-	
-		float consumo_diario;
-	float consumo_mensal;
-	float custo_mensal;
-	
-	
-int i,j,k,y;
+int j;
 char dispositivos[20][100]={"1", "2", "3", "4", "5"};
 
 float *potencia;
 float *horas;
 
+float consumo_diario;
+float consumo_mensal;
+float custo_mensal;
+
 int num_Strings;
 float soma_diario;
 
-    printf("Digite o numero de Dispositivos que deseja cadastrar: \n");
-    
 
-    scanf("%d", &num_Strings);
+printf("Digite o numero de Dispositivos que deseja cadastrar: \n");
+scanf("%d", &num_Strings);
+potencia = alocarVetor(num_Strings);
+horas = alocarVetor(num_Strings);
     
-    potencia = alocarVetor(num_Strings);
-    horas = alocarVetor(num_Strings);
-
-    system("cls");
+system("cls");
     
-
-	registroDispositivos(dispositivos, num_Strings);
-	
-    registroEnergia(potencia, horas, dispositivos, num_Strings );
+registroDispositivos(dispositivos, num_Strings);
+registroEnergia(potencia, horas, dispositivos, num_Strings );
 		
-	FILE *arquivo;
+FILE *arquivo;
 	    
-	arquivo = fopen("Log.txt", "w");
+arquivo = fopen("Log.txt", "w");
 
 	    
 if (arquivo == NULL) {
+	
         printf("Erro ao abrir o arquivo.");
-        return 1;
     }
 	
+
     for ( j = 0; j < num_Strings; j++) {
     	
-        
-    printf("%s possui %.2lf Watts e %.2lf horas de uso e seu consumo diario em kWh e %.2lf \n", dispositivos[j] , potencia[j], horas[j], calculo_consumo_diario(potencia[j],horas[j]));
+    consumo_diario = calculo_consumo_diario(potencia[j],horas[j]);
     
-    fprintf(arquivo, "%s possui %.2lf Watts e %.2lf horas de uso e seu consumo diario em kWh e %.2lf\n", dispositivos[j], potencia[j], horas[j], calculo_consumo_diario(potencia[j], horas[j]));
+    soma_diario = soma_diario + consumo_diario;
+    consumo_mensal = calculo_consumo_mensal(consumo_diario);
+    custo_mensal = calculo_custo_mensal(consumo_mensal);
+     
+    printf("%s possui %.2lf Watts e %.2lf horas de uso e seu consumo diario em kWh e %.2lf", dispositivos[j] , potencia[j], horas[j], consumo_diario);
+    printf("\nO consumo mensal em kWh e %.2lf e seu custo em R$ desconsiderando impostos e aprox. %.2lf \n\n", consumo_mensal ,custo_mensal);
+    
+    fprintf(arquivo, "%s possui %.2lf Watts e %.2lf horas de uso e seu consumo diario em kWh e %.2lf", dispositivos[j] , potencia[j], horas[j], consumo_diario);
+    fprintf(arquivo,"\nO consumo mensal em kWh e %.2lf e seu custo em R$ desconsiderando impostos e aprox. %.2lf \n\n", consumo_mensal ,custo_mensal);
 
-    soma_diario = soma_diario + calculo_consumo_diario(potencia[j],horas[j]);
     }
     
     consumo_mensal = calculo_consumo_mensal(soma_diario);
     custo_mensal = calculo_custo_mensal(consumo_mensal);
 
 	printf("\n O consumo mensal em kWh e aproximadamente %.2lf \n", consumo_mensal);
-	fprintf(arquivo,"\n O consumo mensal em kWh e aproximadamente %.2lf \n", consumo_mensal);
-
-	
-	
 	printf("\n O custo mensal em R$ desconsiderando impostos e aprox. %.2lf\n", custo_mensal);
+	
+	fprintf(arquivo,"\n O consumo mensal em kWh e aproximadamente %.2lf \n", consumo_mensal);
 	fprintf(arquivo,"\n O custo mensal em R$ desconsiderando impostos e aprox. %.2lf\n", custo_mensal);	
     fclose(arquivo);
     
@@ -198,7 +195,6 @@ float calculo_custo_mensal(float consumo_mensal){
 	
 	float custo;
 	
-//custo = consumo_mensal * Tarifa + (ICMS + PIS + COFINS);
 	custo = consumo_mensal * Tarifa;
 
 	return custo;

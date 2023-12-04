@@ -1,3 +1,5 @@
+Feedbacks da Fase 1:
+
 Não havia feedbacks no moodle, pois foi realizado um atendimento sincrono para conversar sobre o projeto.
 
 Mudanças para a Fase 2 com base nos feedbacks:
@@ -6,11 +8,23 @@ Mudanças para a Fase 2 com base nos feedbacks:
 *Foi adicionada uma função com ponteiros;
 *Foi adicinada uma função com strings, onde a mesma possui recursão.
 
+Mudanças para a Fase 3 com base nos feedbacks:
+
+*As opções 2 e 3 agora são funcionais;
+*O programa calcula o custo individual para cada dispositivo.
+
+Alterações no código:
+
+*Foi adicionado uma função de alocação dinâmica para mudar o tamanho de alguns vetores;
+*Foi adicionado uma função de escrita de arquivo;
+*Foi adicionado uma função para ler o arquivo gerado;
+*Foi adicionado uma função para apagar os dados do arquivo.
+
 
 Referências:
 
 //Cálculo baseado no vídeo do canal Matemática Básica com Prof. Alberto: //https://www.youtube.com/watch?v=Nn719mXvtTk
 
-
 https://www.portalsolar.com.br/como-calcular-o-consumo-de-energia-em-kwh
 
+https://www.terra.com.br/gameon/quanto-seu-videogame-representa-na-conta-de-luz,74961e58c8e1ba933245b5c0bcc29cdcsa6aud9z.html

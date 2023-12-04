@@ -19,7 +19,6 @@ int main(void) {
 
 	int escolha;	
 
-	
 	do{
 	
 	printf("\n");
@@ -38,25 +37,17 @@ int main(void) {
 	case 1:
 		
 	 registro();
-	   
-	
 	break;
 			
 	case 2:	
 	
-	system("cls");
-	
-printf("\n\n %i",list_dispositivos());
-	
-	
+		system("cls");
+		printf("\n %i \n",list_dispositivos());
 	break;
 	
 	case 3:
 		
-		
-	printf("\n\n %i",limpar_registros());
-		
-
+		printf("\n %i \n",limpar_registros());
 	break;
 		
 	}
