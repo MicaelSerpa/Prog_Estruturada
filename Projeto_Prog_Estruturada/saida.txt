@@ -1,0 +1,6 @@
+imaisd possui 4234.00 Watts e 453245.00 horas de uso e seu consumo diario em kWh e 1919039.38
+dfgsf possui 56345.00 Watts e 2423.00 horas de uso e seu consumo diario em kWh e 136523.94
+
+ O consumo mensal em kWh e aproximadamente 61666896.00 
+
+ O custo mensal em R$ desconsiderando impostos e aprox. 49333516.00

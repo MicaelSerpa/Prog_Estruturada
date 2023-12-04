@@ -3,11 +3,17 @@
 //Ar Condicionado 7.500 BTU - 1000W
 //TV - 200W
 
+int limpar_registros(void);
+
+int list_dispositivos(void);
+
+int* alocarVetor(int tamanho);
+
 void registroDispositivos(char dispositivos[100][100], int num_Strings);
 
 void configs(void);
 
-float registro(void);
+void registro(void);
 
 float calculo_consumo_diario(float potencia, float tempo);
 

@@ -18,12 +18,11 @@ int main(void) {
 //	configs();//Corrige a acentuação
 
 	int escolha;	
-	float consumo_diario;
-	float consumo_mensal;
-	float custo_mensal;
+
 	
 	do{
 	
+	printf("\n");
 	printf("---------------------------------------\n");
 	printf("-- Eficiencia Energetica Residencial --\n");
 	printf("---------------------------------------\n");
@@ -38,19 +37,25 @@ int main(void) {
 		
 	case 1:
 		
-		consumo_diario = registro();
-	    consumo_mensal = calculo_consumo_mensal(consumo_diario);
-		custo_mensal = calculo_custo_mensal(consumo_mensal);
-		
-		printf("\n O consumo mensal em kWh e aproximadamente %.2lf \n", consumo_mensal);
-		printf("\n O custo mensal em R$ desconsiderando impostos e aprox. %.2lf\n", custo_mensal);	
+	 registro();
+	   
+	
 	break;
 			
 	case 2:	
 	
+	system("cls");
+	
+printf("\n\n %i",list_dispositivos());
+	
+	
 	break;
 	
 	case 3:
+		
+		
+	printf("\n\n %i",limpar_registros());
+		
 
 	break;
 		
