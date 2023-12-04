@@ -1,0 +1,16 @@
+Não havia feedbacks no moodle, pois foi realizado um atendimento sincrono para conversar sobre o projeto.
+
+Mudanças para a Fase 2 com base nos feedbacks:
+
+*Foi removido a função inicialização, pois ela era o "main()" do projeto;
+*Foi adicionada uma função com ponteiros;
+*Foi adicinada uma função com strings, onde a mesma possui recursão.
+
+
+Referências:
+
+//Cálculo baseado no vídeo do canal Matemática Básica com Prof. Alberto: //https://www.youtube.com/watch?v=Nn719mXvtTk
+
+
+https://www.portalsolar.com.br/como-calcular-o-consumo-de-energia-em-kwh
+
